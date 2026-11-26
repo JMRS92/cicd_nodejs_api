@@ -1,3 +1,5 @@
+const variableSinUso = 123; // variable que fuerza el fallo
+
 const express = require('express');
 const { createService } = require('./taskService');
 function createApp(repository) {
