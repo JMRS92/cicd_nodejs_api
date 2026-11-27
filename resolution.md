@@ -1,14 +1,15 @@
 # Resolución Reto 1 · Mi primer workflow: ¡hola, GitHub!
 
 ## Evidencias de ejecución
-**Run fallido (rojo ❌):** https://github.com/JMRS92/cicd_nodejs_api/actions/runs/44518047889
-**Run exitoso (verde ✅):** https://github.com/JMRS92/cicd_nodejs_api/actions/runs/44519411793
+
+**Run fallo:** https://github.com/JMRS92/cicd_nodejs_api/actions/runs/44518047889
+**Run exitoso:** https://github.com/JMRS92/cicd_nodejs_api/actions/runs/44519411793
 
 ## Explicación
 
 En sistemas operativos **Linux/Unix** y entornos de **CI/CD**, un código de salida distinto de cero (`exit 1`) indica que el proceso ha terminado de forma anormal debido a un error genérico, a diferencia del código `0`, que representa una ejecución exitosa.
 
-Cuando un comando devuelve un código de error, GitHub Actions interpreta inmediatamente que el paso ha fallado, marca el job en rojo e interrumpe de forma automática la ejecución de los pasos posteriores (*fail-fast*).
+Cuando un comando devuelve un código de error, GitHub Actions interpreta inmediatamente que el paso ha fallado, marca el job en rojo e interrumpe de forma automática la ejecución de los pasos posteriores (_fail-fast_).
 
 ---
 
@@ -36,11 +37,11 @@ Porque **enmascara el error en lugar de resolverlo**. Eliminar una prueba permit
 
 ### 1. ¿En qué se diferencia un `push` en tu rama de fusionar a `main`?
 
-* **Push en tu rama:** Sube tus cambios a un entorno de trabajo **aislado** en el repositorio remoto. No altera la rama principal ni afecta al trabajo del resto del equipo.
-* **Fusionar a `main` (_merge_):** Integra el código en la rama troncal y definitiva del proyecto, incorporando los cambios a la versión oficial y estable que se despliega.
+- **Push en tu rama:** Sube tus cambios a un entorno de trabajo **aislado** en el repositorio remoto. No altera la rama principal ni afecta al trabajo del resto del equipo.
+- **Fusionar a `main` (_merge_):** Integra el código en la rama troncal y definitiva del proyecto, incorporando los cambios a la versión oficial y estable que se despliega.
 
 ### 2. ¿Por qué es mejor evitar los cambios directos en producción?
 
-* **Ausencia de red de seguridad:** Evita la ejecución de los controles automáticos de calidad del CI (linters, pruebas unitarias y de integración).
-* **Riesgo de interrupción del servicio:** Un error de sintaxis o de lógica impacta de inmediato y de forma directa en los usuarios finales.
-* **Pérdida de revisión y trazabilidad:** Se prescinde de la revisión por pares (_code review_) y se complica el rastreo o la reversión ágil de versiones en caso de incidentes.
+- **Ausencia de red de seguridad:** Evita la ejecución de los controles automáticos de calidad del CI (linters, pruebas unitarias y de integración).
+- **Riesgo de interrupción del servicio:** Un error de sintaxis o de lógica impacta de inmediato y de forma directa en los usuarios finales.
+- **Pérdida de revisión y trazabilidad:** Se prescinde de la revisión por pares (_code review_) y se complica el rastreo o la reversión ágil de versiones en caso de incidentes.
